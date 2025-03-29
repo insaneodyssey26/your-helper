@@ -16,13 +16,13 @@
   background: rgba(0, 0, 0, 0.7);
   color: white;
   min-height: 100vh;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-container h1 {
@@ -33,14 +33,14 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 3rem;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-info,
@@ -51,7 +51,7 @@
   padding: 2.5rem;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-info h2,
@@ -59,12 +59,12 @@
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: #4caf50;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-methods {
   margin-top: 2rem;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-item {
@@ -74,7 +74,7 @@
   margin-bottom: 1.8rem;
   padding-bottom: 1.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-item i {
@@ -95,7 +95,7 @@
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .support-email {
@@ -107,12 +107,12 @@
 
 .form-group {
   margin-bottom: 1.8rem;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   font-weight: 500;
 }
 
@@ -150,7 +150,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .submit-button:hover {
