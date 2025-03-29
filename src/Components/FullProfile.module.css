@@ -1,10 +1,34 @@
+.profileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.profileOverlay.closing {
+  animation: fadeOut 0.3s ease-in-out;
+}
+
 .profileContainer {
   max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.profileContainer.closing {
+  animation: slideDown 0.3s ease-in-out;
 }
 
 .header {
@@ -187,5 +211,45 @@
   .profileImage {
     width: 120px;
     height: 120px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
   }
 } 
