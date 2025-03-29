@@ -14,7 +14,7 @@ export default function About() {
             <h2>For Customers</h2>
             <p>
               Need a plumber for an emergency? Looking for a skilled carpenter?
-              WorkConnect helps you find verified, skilled laborers in your area
+              WorkConnect helps you find verified, skilled helpers in your area
               within minutes. No more unreliable references or endless
               searching.
             </p>
