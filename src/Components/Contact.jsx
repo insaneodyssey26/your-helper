@@ -23,7 +23,7 @@ export default function Contact() {
               <div className={classes["contact-item"]}>
                 <i className="fas fa-envelope"></i>
                 <span>
-                  Email: <strong>support@labourconnect.com</strong>
+                  Email: <strong>support@Helperconnect.com</strong>
                 </span>
               </div>
               <div className={classes["contact-item"]}>
@@ -36,13 +36,13 @@ export default function Contact() {
             </div>
 
             <div className={classes["laborer-support"]}>
-              <h3>Labourer Support</h3>
+              <h3>Helper Support</h3>
               <p>
                 Specialized support for our skilled professionals regarding
                 profile management, payments, and job opportunities.
               </p>
               <span className={classes["support-email"]}>
-                labourers@workconnect.com
+                Helpers@workconnect.com
               </span>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function Contact() {
               <label>Subject</label>
               <select>
                 <option>General Inquiry</option>
-                <option>Labourer Registration</option>
+                <option>Helper Registration</option>
                 <option>Customer Support</option>
                 <option>Payment Issue</option>
               </select>

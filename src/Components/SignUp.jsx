@@ -52,7 +52,7 @@ export default function SignUp() {
           if (!formData.location.trim()) {
             newErrors.location = "Location is required";
           }
-        } else if (userType === 'labour') {
+        } else if (userType === 'Helper') {
           if (!formData.skill.trim()) {
             newErrors.skill = "Primary skill is required";
           }
@@ -199,8 +199,8 @@ export default function SignUp() {
               </div>
               <div 
                 className="user-card" 
-                data-type="labour"
-                onClick={() => handleUserTypeSelect('labour')}
+                data-type="Helper"
+                onClick={() => handleUserTypeSelect('Helper')}
               >
                 <i className="fas fa-tools"></i>
                 <h3>Helper</h3>
@@ -309,7 +309,7 @@ export default function SignUp() {
               )}
 
               {/* Helper-specific fields */}
-              {userType === 'labour' && (
+              {userType === 'Helper' && (
                 <div className="form-grid">
                   <div className="form-group">
                     <label>Primary Skill</label>

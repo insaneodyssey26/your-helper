@@ -4,9 +4,9 @@ export default function About() {
   return (
     <section className={classes["about-section"]}>
       <div className={classes["about-container"]}>
-        <h1>About LabourConnect</h1>
+        <h1>About HelperConnect</h1>
         <p className={classes.tagline}>
-          Bridging the gap between skilled labourers and those who need them
+          Bridging the gap between skilled Helpers and those who need them
         </p>
 
         <div className={classes["about-content"]}>
@@ -26,7 +26,7 @@ export default function About() {
           </div>
 
           <div className={classes["about-card"]}>
-            <h2>For Labourers</h2>
+            <h2>For Helpers</h2>
             <p>
               Expand your client base and grow your business. WorkConnect helps
               skilled workers like you find more jobs and get paid fairly for
@@ -39,7 +39,7 @@ export default function About() {
               <li>🛠 Showcase your skills and portfolio</li>
             </ul>
             <Link to="/login" className="cta-button">
-              Register as a Labourer
+              Register as a Helper
             </Link>
           </div>
         </div>
