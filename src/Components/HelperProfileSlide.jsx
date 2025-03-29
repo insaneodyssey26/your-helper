@@ -1,6 +1,7 @@
 import classes from "./HelperProfileSlide.module.css";
 import { useState, useEffect, useRef } from "react";
 import { FaTimes, FaStar, FaMapMarkerAlt, FaClock, FaMoneyBillWave, FaPhone, FaEnvelope, FaUserTie } from "react-icons/fa";
+import FullProfile from "./FullProfile";
 
 const sampleWorks = [
   "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500",
@@ -65,6 +66,7 @@ export default function HelperProfileSlide({ helper, onClose }) {
   const [projectDetails, setProjectDetails] = useState("");
   const [isClosing, setIsClosing] = useState(false);
   const [desiredPrice, setDesiredPrice] = useState(helper.hourlyRate);
+  const [showFullProfile, setShowFullProfile] = useState(false);
   const slideRef = useRef(null);
 
   useEffect(() => {
@@ -101,6 +103,27 @@ export default function HelperProfileSlide({ helper, onClose }) {
   const handlePriceChange = (e) => {
     setDesiredPrice(parseInt(e.target.value));
   };
+
+  const handleViewFullProfile = () => {
+    setShowFullProfile(true);
+  };
+
+  const handleCloseFullProfile = () => {
+    setShowFullProfile(false);
+  };
+
+  if (showFullProfile) {
+    return (
+      <div className={classes.fullProfileOverlay}>
+        <div className={classes.fullProfileContainer}>
+          <button className={classes.closeButton} onClick={handleCloseFullProfile}>
+            <FaTimes />
+          </button>
+          <FullProfile helper={helper} onClose={handleCloseFullProfile} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`${classes.slideOverlay} ${isClosing ? classes.closing : ''}`}>
@@ -152,7 +175,7 @@ export default function HelperProfileSlide({ helper, onClose }) {
         </div>
 
         <div className={classes.actionButtons}>
-          <button className={classes.viewProfileButton}>
+          <button className={classes.viewProfileButton} onClick={handleViewFullProfile}>
             <FaUserTie className={classes.icon} />
             View Full Profile
           </button>
