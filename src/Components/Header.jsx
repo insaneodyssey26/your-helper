@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import classes from "./Header.module.css";
 export default function Header() {
   const NAVELEMENTS = [
     { id: "", title: "Home" },
@@ -10,12 +11,12 @@ export default function Header() {
   ];
   return (
     <>
-      <header className="header">
-        <nav className="nav-container">
+      <header className={classes.header}>
+        <nav className={classes["nav-container"]}>
           <ul>
             {NAVELEMENTS.map((navelement) => (
               <li key={navelement.id}>
-                <Link to={navelement.id}>{navelement.title}</Link>
+                <NavLink to={navelement.id} className={({isActive})=>isActive? classes.active : undefined}>{navelement.title}</NavLink>
               </li>
             ))}
           </ul>
