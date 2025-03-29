@@ -429,6 +429,7 @@ export default function SignUp() {
             <h1>Complete Your Profile</h1>
             <form className="signup-form" onSubmit={handleSubmit}>
               <div className="input-group">
+                <h2 className="password">Password:</h2>
                 <input
                   type="password"
                   name="password"
