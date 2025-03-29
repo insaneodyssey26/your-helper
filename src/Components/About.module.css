@@ -46,13 +46,13 @@
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   color: white;
   min-height: 100vh;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
-  animation: fadeInUp 0.8s ease-in-out;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .about-container h1 {
@@ -63,7 +63,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: fadeInLeft 0.8s ease-in-out;
+  animation: fadeInLeft 0.6s ease-in-out;
 }
 
 .tagline {
@@ -71,7 +71,7 @@
   font-size: 1.3rem;
   margin-bottom: 4rem;
   opacity: 0.9;
-  animation: fadeInRight 0.8s ease-in-out;
+  animation: fadeInRight 0.6s ease-in-out;
 }
 
 .about-content {
@@ -79,7 +79,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
   margin-bottom: 5rem;
-  animation: fadeInUp 0.8s ease-in-out;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .about-card {
@@ -90,7 +90,7 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.3s ease;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .about-card:hover {
@@ -101,13 +101,13 @@
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: #4caf50;
-  animation: fadeInLeft 0.8s ease-in-out;
+  animation: fadeInLeft 0.6s ease-in-out;
 }
 
 .benefits-list {
   margin: 2rem 0;
   padding-left: 1.2rem;
-  animation: fadeInRight 0.8s ease-in-out;
+  animation: fadeInRight 0.6s ease-in-out;
 }
 
 .benefits-list li {
@@ -115,7 +115,7 @@
   line-height: 1.6;
   position: relative;
   padding-left: 1.8rem;
-  animation: fadeInUp 0.8s ease-in-out;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .benefits-list li::before {
@@ -150,13 +150,13 @@
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 4rem;
-  animation: fadeInUp 0.8s ease-in-out;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .stat-item {
   text-align: center;
   min-width: 150px;
-  animation: fadeInUp 0.8s ease-in-out;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .stat-number {
@@ -172,7 +172,7 @@
 .stat-label {
   font-size: 1.1rem;
   opacity: 0.9;
-  animation: fadeInRight 0.8s ease-in-out;
+  animation: fadeInRight 0.6s ease-in-out;
 }
 
 /* Responsive Design */
