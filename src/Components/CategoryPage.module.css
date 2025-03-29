@@ -1,0 +1,387 @@
+/* ===== Base Styles ===== */
+.container {
+    padding: 1.2rem;
+    width: 1450px;
+    height: 630px;
+    margin: 1rem auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    color: #1a2e35;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2E7D32, #4CAF50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitle {
+    color: #5a6d77;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* ===== Controls Section ===== */
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+  
+  .searchBox {
+    display: flex;
+    gap:10px;
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+  }
+  .searchButton{
+    height:40px;
+    width: 100px;
+    border: none;
+    border-radius: 40px;
+    background: #4caf50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    background: rgba(245, 245, 245, 0.9);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    background: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5a6d77;
+    font-size: 0.9rem;
+  }
+  
+  .sortOptions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .sortLabel {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #5a6d77;
+  }
+  
+  .sortSelect {
+    padding: 0.65rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(245, 245, 245, 0.9);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sortSelect:focus {
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+  
+  /* ===== Professionals List ===== */
+  .professionalsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .professionalItem {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .professionalItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+  
+  .professionalItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+  }
+  
+  .proAvatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(76, 175, 80, 0.2);
+  }
+  
+  .proDetails {
+    flex-grow: 1;
+    min-width: 0;
+  }
+  
+  .proName {
+    font-size: 1.05rem;
+    color: #1a2e35;
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .proMeta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .proMetaItem {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: #5a6d77;
+  }
+  
+  .proMetaItem i {
+    color: #4CAF50;
+    font-size: 0.85rem;
+  }
+  
+  .proSkills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .proSkillTag {
+    background: rgba(76, 175, 80, 0.08);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    color: #2E7D32;
+    font-weight: 500;
+    border: 1px solid rgba(76, 175, 80, 0.15);
+    transition: all 0.2s ease;
+  }
+  
+  .proSkillTag:hover {
+    background: rgba(76, 175, 80, 0.15);
+  }
+  
+  .proActions {
+    display: flex;
+    gap: 0.6rem;
+    margin-left: 0.8rem;
+    flex-shrink: 0;
+  }
+  
+  .proViewBtn {
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    background: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .proHireBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.2);
+  }
+  
+  .proViewBtn:hover {
+    background: #f8f8f8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .proHireBtn:hover {
+    background: linear-gradient(135deg, #43A047 0%, #1B5E20 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* ===== No Results State ===== */
+  .noResults {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    margin-top: 1rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .noResultsText {
+    font-size: 1rem;
+    color: #5a6d77;
+    margin-bottom: 1rem;
+  }
+  
+  .browseLink {
+    color: #4CAF50;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #4CAF50;
+  }
+  
+  .browseLink:hover {
+    color: #2E7D32;
+    border-bottom-color: transparent;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 12px;
+    }
+    
+    .controls {
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: stretch;
+    }
+    
+    .searchBox {
+      max-width: 100%;
+    }
+    
+    .professionalItem {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+    
+    .professionalItem::before {
+      width: 100%;
+      height: 4px;
+      top: 0;
+      left: 0;
+    }
+    
+    .proAvatar {
+      margin-right: 0;
+      margin-bottom: 0.8rem;
+    }
+    
+    .proActions {
+      margin-left: 0;
+      margin-top: 0.8rem;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    
+    .proName {
+      white-space: normal;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .proActions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .proViewBtn,
+    .proHireBtn {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .subtitle {
+      font-size: 0.85rem;
+    }
+  }

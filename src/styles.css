@@ -638,9 +638,9 @@ input[type="range"] {
   border-radius: 12px;
   padding: 2.5rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  margin: auto;
+  margin-top: 2.5rem;
 }
 
 .signup-container h1 {
@@ -649,6 +649,10 @@ input[type="range"] {
   margin-bottom: 2rem;
   font-size: 2.2rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.input-group .password{
+  color:whitesmoke;
+  margin-bottom: 8px;
 }
 
 .user-type-grid {
