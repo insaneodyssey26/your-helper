@@ -1,0 +1,196 @@
+/* About.css - For About.jsx */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-section {
+  padding: 6rem 2rem 4rem;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  color: white;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.about-container h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #fff, #4caf50);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeInLeft 0.8s ease-in-out;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+  opacity: 0.9;
+  animation: fadeInRight 0.8s ease-in-out;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #4caf50;
+  animation: fadeInLeft 0.8s ease-in-out;
+}
+
+.benefits-list {
+  margin: 2rem 0;
+  padding-left: 1.2rem;
+  animation: fadeInRight 0.8s ease-in-out;
+}
+
+.benefits-list li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.8rem;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.benefits-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.cta-button:hover {
+  background: transparent;
+  border-color: #4caf50;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.stat-item {
+  text-align: center;
+  min-width: 150px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #4caf50;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  animation: fadeInRight 0.8s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .about-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-card {
+    padding: 2rem;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
