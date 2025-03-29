@@ -3,7 +3,7 @@ export default function Contact() {
   return (
     <section className={classes["contact-section"]}>
       <div className={classes["contact-container"]}>
-        <h1>Contact LabourConnect</h1>
+        <h1>Contact HelperConnect</h1>
 
         <div className={classes["contact-content"]}>
           <div className={classes["contact-info"]}>

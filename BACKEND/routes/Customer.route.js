@@ -4,6 +4,6 @@ import { registerCustomer } from "../controllers/Customer.controller.js";
 
 const Customer = Router();
 
-Customer.route("/Sign-up").post(registerCustomer)
+Customer.route("/Sign-up/Customer").post(registerCustomer)
 
 export default Customer;

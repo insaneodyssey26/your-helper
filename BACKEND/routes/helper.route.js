@@ -5,7 +5,7 @@ import { upload } from "../middlewares/multer.middleware.js"; // Import multer m
 const Customer = Router();
 
 // Define multer middleware for handling CV and certification uploads
-Customer.route("/Sign-up").post(
+Customer.route("/Sign-up/helpers").post(
   upload.fields([
     { name: "cv", maxCount: 1 }, // Field for CV upload
     { name: "certification", maxCount: 1 }, // Field for certification upload
