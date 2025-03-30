@@ -67,6 +67,7 @@ export default function HelperProfileSlide({ helper, onClose }) {
   const [isClosing, setIsClosing] = useState(false);
   const [desiredPrice, setDesiredPrice] = useState(helper.hourlyRate);
   const [showFullProfile, setShowFullProfile] = useState(false);
+  const [showPaymentOptions, setShowPaymentOptions] = useState(false);
   const slideRef = useRef(null);
 
   useEffect(() => {
@@ -98,6 +99,9 @@ export default function HelperProfileSlide({ helper, onClose }) {
       time: bookingTime,
       details: projectDetails,
     });
+    
+    // Show payment options page
+    setShowPaymentOptions(true);
   };
 
   const handlePriceChange = (e) => {
@@ -111,6 +115,105 @@ export default function HelperProfileSlide({ helper, onClose }) {
   const handleCloseFullProfile = () => {
     setShowFullProfile(false);
   };
+
+  const handleSelectPayment = (method) => {
+    console.log(`Selected payment method: ${method}`);
+    // Process payment with the selected method
+    // This would typically integrate with a payment gateway
+    
+    // For demo purposes, just close the payment options
+    setShowPaymentOptions(false);
+    // Show confirmation or redirect to confirmation page
+    alert(`Booking confirmed! Payment will be processed via ${method}`);
+  };
+
+  const handleClosePayment = () => {
+    setShowPaymentOptions(false);
+  };
+
+  if (showPaymentOptions) {
+    return (
+      <div className={classes.fullProfileOverlay}>
+        <div className={classes.fullProfileContainer}>
+          <button className={classes.closeButton} onClick={handleClosePayment}>
+            <FaTimes />
+          </button>
+          <div className={classes.paymentOptionsContainer}>
+            <h2>Select Payment Method</h2>
+            <p>Please select your preferred payment method to complete your booking with {helper.name}.</p>
+            
+            <div className={classes.paymentMethodsList}>
+              <div className={classes.paymentMethod} onClick={() => handleSelectPayment('UPI')}>
+                <div className={classes.paymentIcon}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1200px-UPI-Logo-vector.svg.png" alt="UPI" />
+                </div>
+                <div className={classes.paymentDetails}>
+                  <h3>UPI</h3>
+                  <p>Pay instantly using any UPI app</p>
+                </div>
+              </div>
+              
+              <div className={classes.paymentMethod} onClick={() => handleSelectPayment('Net Banking')}>
+                <div className={classes.paymentIcon}>
+                  <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="Net Banking" />
+                </div>
+                <div className={classes.paymentDetails}>
+                  <h3>Net Banking</h3>
+                  <p>Pay using your internet banking</p>
+                </div>
+              </div>
+              
+              <div className={classes.paymentMethod} onClick={() => handleSelectPayment('Credit/Debit Card')}>
+                <div className={classes.paymentIcon}>
+                  <img src="https://cdn-icons-png.flaticon.com/512/179/179457.png" alt="Credit/Debit Card" />
+                </div>
+                <div className={classes.paymentDetails}>
+                  <h3>Credit/Debit Card</h3>
+                  <p>Pay using Visa, Mastercard, or RuPay</p>
+                </div>
+              </div>
+              
+              <div className={classes.paymentMethod} onClick={() => handleSelectPayment('Wallet')}>
+                <div className={classes.paymentIcon}>
+                  <img src="https://cdn-icons-png.flaticon.com/512/3037/3037247.png" alt="Wallet" />
+                </div>
+                <div className={classes.paymentDetails}>
+                  <h3>Mobile Wallet</h3>
+                  <p>Pay using PayTM, PhonePe, or other wallets</p>
+                </div>
+              </div>
+              
+              <div className={classes.paymentMethod} onClick={() => handleSelectPayment('Cash')}>
+                <div className={classes.paymentIcon}>
+                  <img src="https://cdn-icons-png.flaticon.com/512/2488/2488426.png" alt="Cash" />
+                </div>
+                <div className={classes.paymentDetails}>
+                  <h3>Cash on Service</h3>
+                  <p>Pay in cash after the service is completed</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className={classes.paymentSummary}>
+              <h3>Booking Summary</h3>
+              <div className={classes.summaryItem}>
+                <span>Service</span>
+                <span>{helper.category}</span>
+              </div>
+              <div className={classes.summaryItem}>
+                <span>Date & Time</span>
+                <span>{bookingDate} at {bookingTime}</span>
+              </div>
+              <div className={classes.summaryItem}>
+                <span>Price</span>
+                <span>${desiredPrice}/hr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (showFullProfile) {
     return (
@@ -314,4 +417,4 @@ export default function HelperProfileSlide({ helper, onClose }) {
       </div>
     </div>
   );
-} 
+}
