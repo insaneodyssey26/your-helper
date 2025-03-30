@@ -3,6 +3,8 @@ import cors from 'cors'; // for middleware
 import cookieParser from 'cookie-parser';
 
 const app = express(); 
+const port = process.env.PORT || 6000;
+
 app.use(cors({
 oirigin:process.env.CORS_ORIGIN,
 credentials:true, // to allow the cookies to be sent from the server
@@ -26,5 +28,8 @@ import userRouter from './routes/user.routes.js';
 // Routes declaration
 app.use('/api/v1/user', userRouter); // middleware to use the userRouter
 
+app.listen(port,()=>{
+    console.log("The server is ready")
+});
 
 export default app;
