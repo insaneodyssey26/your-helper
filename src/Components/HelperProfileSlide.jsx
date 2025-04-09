@@ -1,5 +1,5 @@
+import React, { useState, useEffect, useRef } from "react";
 import classes from "./HelperProfileSlide.module.css";
-import { useState, useEffect, useRef } from "react";
 import { FaTimes, FaStar, FaMapMarkerAlt, FaClock, FaMoneyBillWave, FaPhone, FaEnvelope, FaUserTie } from "react-icons/fa";
 import FullProfile from "./FullProfile";
 
@@ -68,6 +68,11 @@ export default function HelperProfileSlide({ helper, onClose }) {
   const [desiredPrice, setDesiredPrice] = useState(helper.hourlyRate);
   const [showFullProfile, setShowFullProfile] = useState(false);
   const [showPaymentOptions, setShowPaymentOptions] = useState(false);
+  const [showMessageScreen, setShowMessageScreen] = useState(false);
+  const [messages, setMessages] = useState([
+    { text: "Hi, how can I help you?", type: "received" },
+  ]);
+  const [newMessage, setNewMessage] = useState("");
   const slideRef = useRef(null);
 
   useEffect(() => {
@@ -129,6 +134,24 @@ export default function HelperProfileSlide({ helper, onClose }) {
 
   const handleClosePayment = () => {
     setShowPaymentOptions(false);
+  };
+
+  const handleOpenMessageScreen = () => {
+    setShowMessageScreen(true);
+  };
+
+  const handleCloseMessageScreen = () => {
+    setShowMessageScreen(false);
+  };
+
+  const handleSendMessage = () => {
+    if (newMessage.trim() === "") return;
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: newMessage, type: "sent" },
+    ]);
+    setNewMessage(""); // Clear the input field
   };
 
   if (showPaymentOptions) {
@@ -228,6 +251,46 @@ export default function HelperProfileSlide({ helper, onClose }) {
     );
   }
 
+  if (showMessageScreen) {
+    return (
+      <div className={classes.messageOverlay}>
+        <div className={classes.messageContainer}>
+          <button className={classes.closeButton} onClick={handleCloseMessageScreen}>
+            <FaTimes />
+          </button>
+          <div className={classes.chatHeader}>
+            <h2>Chat with {helper.name}</h2>
+          </div>
+          <div className={classes.chatBox}>
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={`${classes.message} ${
+                  message.type === "sent" ? classes.sent : classes.received
+                }`}
+              >
+                {message.text}
+              </div>
+            ))}
+          </div>
+          <div className={classes.messageInputContainer}>
+            <input
+              type="text"
+              placeholder="Type your message..."
+              className={classes.messageInput}
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+            />
+            <button className={classes.sendButton} onClick={handleSendMessage}>
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`${classes.slideOverlay} ${isClosing ? classes.closing : ''}`}>
       <div ref={slideRef} className={classes.slideContent}>
@@ -270,7 +333,7 @@ export default function HelperProfileSlide({ helper, onClose }) {
               <FaPhone className={classes.icon} />
               Call
             </button>
-            <button className={classes.contactButton}>
+            <button className={classes.contactButton} onClick={handleOpenMessageScreen}>
               <FaEnvelope className={classes.icon} />
               Message
             </button>
